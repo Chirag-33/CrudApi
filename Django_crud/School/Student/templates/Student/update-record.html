@@ -1,0 +1,21 @@
+{% extends 'Student/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+    <div class="container bg-light shadow-md form-layout">
+
+        <h3>Update your record here</h3>
+        <br>
+
+        <form method="POST", autocomplete="off">
+            {% csrf_token %}
+            {{ form|crispy }}
+
+            <br>
+
+            <button class="btn btn-primary" type="submit">Update record</button>
+        </form>
+
+    </div>
+
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'Student/base.html' %}
+{% block content %}
+
+    <div class="card">
+        <Strong>
+            {{record.last_name|upper}}
+
+            {{record.first_name}}
+        </Strong>
+
+        <div>
+            <p><strong>id:</strong>{{record.id}}</p>
+            <p><strong>email: </strong>{{record.email}}</p>
+            <p><strong>phone: </strong>{{record.phone}}</p>
+            <p><strong>city: </strong>{{record.city}}</p>
+            <p><strong>province: </strong>{{record.province}}</p>
+            <p><strong>country: </strong>{{record.country}}</p>
+            <p><strong>creation_date: </strong>{{record.creation_date}}</p>
+
+        </div>
+
+    </div>
+
+    <br>
+    <a href="{% url 'dashboard' %} " class="btn btn-secondary">Return</a>
+
+    &nbsp;
+
+    <a href="{% url 'update-record' record.id %}" class="btn btn-outline-primary">update</a>
+
+    &nbsp;
+
+    <a href="{% url 'delete-record' record.id %}" class="btn btn-danger">Delete</a>
+
+
+{% endblock %}

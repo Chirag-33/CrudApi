@@ -1,0 +1,35 @@
+{% extends 'Student/base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<body>
+    
+
+    <div class="container bg-light shadow-md p-5 form-layout">
+        <h3>Create your accounr</h3>
+
+        <h5>manage your Student through data</h5>
+
+        <form  method="POST" autocomplete="off">
+
+            {% csrf_token %}
+
+            {{form|crispy}}
+            <br>
+
+            <button type="submit" class="btn btn-primary ">Create account</button>
+
+
+        </form>
+        
+        <br>
+
+        <div class="text-center">
+            Already have an account?<a href="{% url 'my-login' %}">Login</a>
+        </div>
+    </div>
+</body>
+
+{% endblock %}

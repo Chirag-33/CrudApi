@@ -1,0 +1,47 @@
+{% extends 'Student/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<body>
+    
+
+    <div class="container bg-light shadow-md form-layout">
+        <h3>Create your record </h3>
+
+        <hr>
+        <br>
+
+        <form method="POST" autocomplete="off">
+            {% csrf_token %}
+
+            {{form.first_name|as_crispy_field}}
+            <br>
+            {{form.last_name|as_crispy_field}}
+            <br>
+            {{form.email|as_crispy_field}}
+            <br>
+            {{form.phone|as_crispy_field}}
+            <br>
+            {{form.address|as_crispy_field}}
+            <br>
+            {{form.city|as_crispy_field}}
+            <br>
+            {{form.province|as_crispy_field}}
+            <br>
+            {{form.country|as_crispy_field}}
+ 
+            <br>
+
+            <button type="submit" class="btn btn-primary">Create record</button>
+            
+        </form>
+
+        
+
+
+
+    </div>
+    
+
+</body>
+{% endblock %}
